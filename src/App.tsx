@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Posts from './components/Posts';
 import './App.css';
 
 const App: React.FC = () => {
@@ -21,10 +22,10 @@ const App: React.FC = () => {
     fetchPosts();
   }, []);
 
-  console.log('post', posts);
   return (
-    <div className="container">
-      <h1>Pagination 101</h1>
+    <div className="container mt-5">
+      <div className="text-primary mb-3">My Blog</div>
+      <Posts posts={posts} loading={loading} />
     </div>
   );
 }
