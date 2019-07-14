@@ -14,7 +14,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }: IProps) => {
     }
 
     return (
-        <nav>
+        <nav style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
@@ -24,7 +28,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }: IProps) => {
                     </li>
                 ))}
             </ul>
-        </nav>
+        </nav >
     );
 }
 
