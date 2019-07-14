@@ -1,6 +1,16 @@
 import React from 'react';
 
-const Posts = ({ posts, loading }) => {
+type Posts = {
+    title: string;
+    id: number;
+}
+
+interface IProps {
+    posts: Posts[];
+    loading: Boolean;
+}
+
+const Posts = ({ posts, loading }: IProps) => {
     if (loading) {
         return <h2>Loading...</h2>
     }

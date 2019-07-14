@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Pagination = ({ postsPerPage, totalPosts }) => {
+interface IProps {
+    postsPerPage: number;
+    totalPosts: number;
+    paginate: (arg0: number) => void;
+}
+
+const Pagination = ({ postsPerPage, totalPosts, paginate }: IProps) => {
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -12,7 +18,7 @@ const Pagination = ({ postsPerPage, totalPosts }) => {
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
-                        <a href="!#" className="page-link">
+                        <a href="!#" className="page-link" onClick={() => paginate(number)}>
                             {number}
                         </a>
                     </li>
